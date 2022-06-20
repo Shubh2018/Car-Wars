@@ -70,25 +70,25 @@ public class GameManager : MonoBehaviour
 
         while (_enabledTurretSpawn < 10 && _enabledPickupSpawn < 10)
         {
-            foreach (var turretSpawn in _turretSpawner)
-            {
-                if (Random.Range(0, 100) < 50)
+                foreach (var turretSpawn in _turretSpawner)
                 {
-                    turretSpawn.gameObject.SetActive(true);
-                    _enabledTurretSpawn += 1;
+                    if (Random.Range(0, 100) < 50)
+                    {
+                        turretSpawn.gameObject.SetActive(true);
+                        _enabledTurretSpawn += 1;
+                    }
                 }
-            }
 
-            foreach (var pickupSpawn in _pickupSpawners)
-            {
-                if (Random.Range(0, 100) < 50)
+                foreach (var pickupSpawn in _pickupSpawners)
                 {
-                    pickupSpawn.gameObject.SetActive(true);
-                    _enabledPickupSpawn += 1;
+                    if (Random.Range(0, 100) < 50)
+                    {
+                        pickupSpawn.gameObject.SetActive(true);
+                        _enabledPickupSpawn += 1;
+                    }
                 }
             }
         }
-    }
 
     private void Start()
     {

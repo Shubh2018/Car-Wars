@@ -6,7 +6,7 @@ public class PickupSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] _pickups;
 
-    private void Start()
+    private void Awake()
     {
         if (Random.Range(0, 100) < 25)
             Instantiate(_pickups[0], this.transform.position, Quaternion.identity).transform.parent = this.transform;
